@@ -1,15 +1,108 @@
-\begin{prob}
-    مسئله‌ی نمونه:
 
-    محاسبه کنید:
+
+% معرفی تمپلیت
+\section*{راهنمای استفاده از تمپلیت}
+
+این تمپلیت برای نوشتن تمرین‌ها و گزارش‌های ریاضی به‌ویژه در دانشکده ریاضی و علوم کامپیوتر دانشگاه صنعتی امیرکبیر طراحی شده است. در اینجا نحوه استفاده از تمپلیت شرح داده شده است.
+
+\subsection*{1. تنظیمات اولیه}
+
+در ابتدا باید فایل \texttt{configs.tex} را برای شخصی‌سازی اطلاعات خود و دوره‌ای که در آن هستید ویرایش کنید. در این فایل می‌توانید موارد زیر را تنظیم کنید:
+\begin{itemize}
+    \item \textbf{نام و نام‌خانوادگی} خود را در دستور \texttt{\textbackslash myname} وارد کنید.
+    \item \textbf{شماره دانشجویی} خود را در دستور \texttt{\textbackslash mystdID} وارد کنید.
+    \item \textbf{نام استاد} را در دستور \texttt{\textbackslash type} وارد کنید.
+    \item \textbf{نام دوره} و \textbf{ترم} را نیز می‌توانید در دستور \texttt{\textbackslash semester} تنظیم کنید.
+\end{itemize}
+
+\subsection*{2. نوشتن تمرین‌ها و راه‌حل‌ها}
+
+برای نوشتن یک تمرین جدید، از محیط \texttt{prob} استفاده کنید:
+\begin{LTR}
+    \begin{verbatim}
+    \begin{prob}
+        Write your problem here.
+    \end{prob}
+    \end{verbatim}
+\end{LTR}
+
+برای نوشتن راه‌حل، از محیط \texttt{sol} استفاده کنید:
+
+\begin{LTR}
+    \begin{verbatim}
+    \begin{sol}
+        write your solution here.
+    \end{sol}
+    \end{verbatim}
+\end{LTR}
+
+در نهایت، برای فرمت‌دهی صحیح، تمپلیت به‌صورت خودکار از دستورات و تنظیمات سفارشی‌شده استفاده می‌کند.
+
+\subsection*{3. استفاده از محیط‌های دیگر}
+
+اگر نیاز به نوشتن اثبات ریاضی یا توضیحات اضافی دارید، می‌توانید از محیط‌های زیر استفاده کنید:
+
+\begin{itemize}
+    \item \texttt{proof} برای نوشتن اثبات‌های ریاضی.
+    \item \texttt{customEnv} برای محیط‌های سفارشی که می‌خواهید در کنار شماره‌گذاری‌های خاص داشته باشید.
+\end{itemize}
+
+برای مثال:
+
+\begin{LTR}
+    \begin{verbatim}
+    \begin{proof}
+        Write your proof here.
+    \end{proof}
+    \end{verbatim}
+\end{LTR}
+
+\subsection*{4. افزودن کدهای برنامه‌نویسی}
+
+اگر نیاز دارید که کدهای برنامه‌نویسی را در متن خود نمایش دهید، می‌توانید از محیط \texttt{lstlisting} استفاده کنید. به عنوان مثال:
+
+\begin{LTR}
+    \begin{verbatim}
+    \begin{lstlisting}[language=Python]
+    def solve_integral():
+        return 1 / 3
+    \end{lstlisting}
+    \end{verbatim}
+\end{LTR}
+
+
+این کد به‌صورت خودکار با رنگ‌های مختلف و فرمت مناسب در LaTeX نمایش داده خواهد شد.
+
+% اضافه کردن مثال حل‌شده
+\section*{مثال حل‌شده}
+
+در این قسمت، یک مثال کامل از نوشتن یک تمرین و راه‌حل آن آورده شده است:
+
+\begin{prob}
+    محاسبه انتگرال زیر:
     \[
-    \int_{0}^{1} x^2 \, dx
+        \int_{0}^{1} x^2 \, dx
     \]
 \end{prob}
 
 \begin{sol}
-
+    برای محاسبه این انتگرال، از قاعده‌ی انتگرال‌گیری استفاده می‌کنیم:
     \[
-    \int_{0}^{1} x^2 \, dx = \left. \frac{x^3}{3} \right|_{0}^{1} = \frac{1}{3} - 0 = \frac{1}{3}
+        \int_{0}^{1} x^2 \, dx = \left[ \frac{x^3}{3} \right]_{0}^{1} = \frac{1}{3} - 0 = \frac{1}{3}
     \]
 \end{sol}
+
+\begin{proof}
+    اثبات محاسبه این انتگرال به سادگی انجام می‌شود، زیرا فرمول مورد استفاده برای انتگرال‌گیری به‌طور مستقیم به‌دست می‌آید.
+\end{proof}
+
+\newpage
+
+% اضافه کردن منابع
+\section*{منابع}
+در این قسمت می‌توانید منابع خود را ذکر کنید. به عنوان مثال:
+
+\begin{itemize}
+    \item کتاب مرجع: \textit{ریاضیات کاربردی}، نویسنده: دکتر علی‌اکبر نظری
+    \item مقالات علمی مرتبط
+\end{itemize}
